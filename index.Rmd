@@ -1,0 +1,105 @@
+---
+title: <span style="color:#034a94"> **Actividad 2**</span>
+output:
+html_document:
+css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+library(summarytools)
+
+
+c1 ="#FF7F00"  # naranja - color primario 
+c2 ="#034A94"  # azul oscuro - color secundario
+c3 ="#0EB0C6"  # azul claro - color terciario
+c4 ="#686868"  # gris - color texto
+```
+
+
+```{r, echo=FALSE, out.width="100%", fig.align = "center"}
+knitr::include_graphics("img/banner1.png")
+```
+
+
+</br></br>
+
+La Actividad 2 está compuesta por tres problemas planteados, dos de ellos basados en la simulación y un tercero en lectura de dos artículos que se describen a continuación:
+
+</br></br>
+
+# <span style="color:#034a94"> **Problema 1**</span>
+
+</br>
+
+### <span style="color:#FF7F00">**Teorema del Límite Central**</span> 
+
+</br>
+
+El Teorema del Límite Central es uno de los más importantes en la inferencia estadística y habla sobre la convergencia de los estimadores como la proporción muestral a la distribución normal. Algunos autores afirman que esta aproximación es bastante buena a partir del umbral $n>30$.
+
+A continuación se describen los siguientes pasos para si verificación:
+
+</br>
+
+a. Realice una simulación en la cual genere una población de $N=1000$ (Lote), donde el porcentaje de individuos (supongamos plantas) enfermas sea del 50%.
+
+</br>
+
+b. Genere una función que: 
+    * Permita obtener una muestra aleatoria de la población y 
+    * Calcule el estimador de la proporción muestral $\widehat{p}$ para un tamaño de muestra dado $n$. 
+
+</br>
+
+c. Repita el escenario anterior (b) $n=500$ veces y analice los resultados en cuanto al comportamiento de los $500$ resultados del estimador $\widehat{p}$. ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice un comentario sobre los resultados obtenidos.
+
+</br>
+
+d. Repita los puntos  b y c para tamaños de muestra $n=5$, $10$, $15$, $20$, $30$, $50$, $60$, $100$, $200$, $500$. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks) y métodos gráficos (grafico qqnorm de normalidad). Comente los resultados obtenidos
+
+</br>
+
+e. Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobrelos resultados del ejercicio.
+
+
+</br></br></br>
+
+# <span style="color:#034a94">**Problema 2**</span>
+
+### <span style="color:#FF7F00">**Validación de resultados**</span> 
+
+La comparación de tratamientos es una práctica fundamental en las ciencias agropecuarias y para ello a nivel estadístico se cuenta con herramientas para apoyar el proceso de toma de decisiones y así poder lograr concluir con un alto grado de confianza sobre los resultados observados en una muestra. A través de la simulación es posible evaluar estimadores y sus propiedades,  que nos permitan usarlos con toda tranquilidad.   
+
+Suponga un escenario en el cual se aplicó tratamientos diferentes a dos lotes de una misma plantas y se desea analizar si alguno de los dos tratamientos presenta un mejor desempeño en el control de una plaga presente en ambos al momento inicial. Para ello utilizará como criterio de desempeño el tratamiento, el *menor porcentaje de plantas enfermas* presente después de un tiempo de aplicación (es decir, si se presentan o no diferencias en las proporciones de enfermos $p_1$ y $p_2$ - proporciones poblacionales-). 
+
+a. Realice una simulación en la cual genere dos poblaciones de $N_1=1000$ (Lote 1) y $N_2=1500$ (Lote 2), para los cuales se asume que el porcentaje de individuos (plantas) enfermas en ambos lotes es del 10% (es decir, sin diferencias entre los tratamientos).
+
+b. Genere una función que permita obtener una muestra aleatoria de los lotes y calcule el estimador de la proporción muestral para cada lote ($\widehat{p_1}$ y $\widehat{p_2}$) para un tamaño de muestra dado $n_1 = n_2$. Calcule la diferencia entre los estimadores $\widehat{p_1}-\widehat{p_2}$.
+
+c. Repita el escenario anterior (b) 500 veces y analice los resultados en cuanto al comportamiento de los $500$ estimadores (diferencias $\widehat{p_1}-\widehat{p_2}$). ¿Qué tan simétricos son los resultados?, ¿Son siempre cero las diferencias?
+
+d. Realice los puntos b y c para tamaños de muestra $n_1 = n_2 = 5$, $10$, $15$, $20$, $30$, $50$, $60$, $100$, $200$, $500$. Compare los resultados de los estimadores ($\widehat{p_1}-\widehat{p_2}$) en cuanto a la normalidad. También analice el comportamiento de las diferencias y evalúe. ¿Considera que es más probable concluir que existen diferencias entre los tratamientos con muestras grandes que pequeñas, es decir, cuál considera usted que es el efecto del tamaño de muestra en el caso de la comparación de proporciones? 
+
+e. Ahora realice nuevamente los puntos a-d bajo un escenario con dos lotes, pero de proporciones de enfermos diferentes ($p_1=0.1$ y $p_2=0.15$), es decir, el tratamiento del lote 1 si presentó un mejor desempeño reduciendo en un 5% el porcentaje de enfermos. Bajo este nuevo escenario compare la distribución de estas diferencias ($\widehat{p_1}-\widehat{p_2}$) con las observadas bajo igualdad de condiciones en los lotes. ¿Qué puede concluir? ¿Existen puntos en los cuales es posible que se observen diferencias de $p_1- p_2$ bajo ambos escenarios (escenario 1: sin diferencias entre $p_1$ y $p_2$, escenario 2: diferencia de 5%)?
+
+</br></br></br>
+
+
+# <span style="color:#034a94">**Problema 3**</span>
+
+### <span style="color:#FF7F00">**Uso del valor-p como criterio de decisión**</span> 
+
+
+
+Con base a los artículos: 
+
+* *“Statistical Errors: P values, the gold standard of statistical validity, are not as reliable as many scientists assume”*  
+* *“Statisticians issue warning on P values: Statement aims to halt missteps in the quest for certainty”* 
+
+Escriba un resumen (máximo 2 páginas) sobre ambos artículos e incluya en este sus opiniones en cuanto al uso del valor p como criterio de decisión en inferencia estadística.
+
+
+
+
+

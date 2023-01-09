@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title> Actividad 2</title>
+
+<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore"><span style="color:#034a94">
+<strong>Actividad 2</strong></span></h1>
+
+</div>
+
+
+<p><img src="img/banner1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p></br></br></p>
+<p>La Actividad 2 está compuesta por tres problemas planteados, dos de
+ellos basados en la simulación y un tercero en lectura de dos artículos
+que se describen a continuación:</p>
+<p></br></br></p>
+<div id="problema-1" class="section level1">
+<h1><span style="color:#034a94"> <strong>Problema 1</strong></span></h1>
+<p></br></p>
+<div id="teorema-del-límite-central" class="section level3">
+<h3><span style="color:#FF7F00"><strong>Teorema del Límite
+Central</strong></span></h3>
+<p></br></p>
+<p>El Teorema del Límite Central es uno de los más importantes en la
+inferencia estadística y habla sobre la convergencia de los estimadores
+como la proporción muestral a la distribución normal. Algunos autores
+afirman que esta aproximación es bastante buena a partir del umbral
+<span class="math inline">\(n&gt;30\)</span>.</p>
+<p>A continuación se describen los siguientes pasos para si
+verificación:</p>
+<p></br></p>
+<ol style="list-style-type: lower-alpha">
+<li>Realice una simulación en la cual genere una población de <span
+class="math inline">\(N=1000\)</span> (Lote), donde el porcentaje de
+individuos (supongamos plantas) enfermas sea del 50%.</li>
+</ol>
+<p></br></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Genere una función que:
+<ul>
+<li>Permita obtener una muestra aleatoria de la población y</li>
+<li>Calcule el estimador de la proporción muestral <span
+class="math inline">\(\widehat{p}\)</span> para un tamaño de muestra
+dado <span class="math inline">\(n\)</span>.</li>
+</ul></li>
+</ol>
+<p></br></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Repita el escenario anterior (b) <span
+class="math inline">\(n=500\)</span> veces y analice los resultados en
+cuanto al comportamiento de los <span class="math inline">\(500\)</span>
+resultados del estimador <span
+class="math inline">\(\widehat{p}\)</span>. ¿Qué tan simétricos o
+sesgados son los resultados obtenidos? y ¿qué se puede observar en
+cuanto a la variabilidad?. Realice un comentario sobre los resultados
+obtenidos.</li>
+</ol>
+<p></br></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Repita los puntos b y c para tamaños de muestra <span
+class="math inline">\(n=5\)</span>, <span
+class="math inline">\(10\)</span>, <span
+class="math inline">\(15\)</span>, <span
+class="math inline">\(20\)</span>, <span
+class="math inline">\(30\)</span>, <span
+class="math inline">\(50\)</span>, <span
+class="math inline">\(60\)</span>, <span
+class="math inline">\(100\)</span>, <span
+class="math inline">\(200\)</span>, <span
+class="math inline">\(500\)</span>. Compare los resultados obtenidos
+para los diferentes tamaños de muestra en cuanto a la normalidad.
+Utilice pruebas de bondad y ajuste (shapiro wilks) y métodos gráficos
+(grafico qqnorm de normalidad). Comente los resultados obtenidos</li>
+</ol>
+<p></br></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Repita toda la simulación (puntos a – d), pero ahora para lotes con
+10% de plantas enfermas y de nuevo para lotes con un 90% de plantas
+enfermas. Concluya sobrelos resultados del ejercicio.</li>
+</ol>
+<p></br></br></br></p>
+</div>
+</div>
+<div id="problema-2" class="section level1">
+<h1><span style="color:#034a94"><strong>Problema 2</strong></span></h1>
+<div id="validación-de-resultados" class="section level3">
+<h3><span style="color:#FF7F00"><strong>Validación de
+resultados</strong></span></h3>
+<p>La comparación de tratamientos es una práctica fundamental en las
+ciencias agropecuarias y para ello a nivel estadístico se cuenta con
+herramientas para apoyar el proceso de toma de decisiones y así poder
+lograr concluir con un alto grado de confianza sobre los resultados
+observados en una muestra. A través de la simulación es posible evaluar
+estimadores y sus propiedades, que nos permitan usarlos con toda
+tranquilidad.</p>
+<p>Suponga un escenario en el cual se aplicó tratamientos diferentes a
+dos lotes de una misma plantas y se desea analizar si alguno de los dos
+tratamientos presenta un mejor desempeño en el control de una plaga
+presente en ambos al momento inicial. Para ello utilizará como criterio
+de desempeño el tratamiento, el <em>menor porcentaje de plantas
+enfermas</em> presente después de un tiempo de aplicación (es decir, si
+se presentan o no diferencias en las proporciones de enfermos <span
+class="math inline">\(p_1\)</span> y <span
+class="math inline">\(p_2\)</span> - proporciones poblacionales-).</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Realice una simulación en la cual genere dos poblaciones de <span
+class="math inline">\(N_1=1000\)</span> (Lote 1) y <span
+class="math inline">\(N_2=1500\)</span> (Lote 2), para los cuales se
+asume que el porcentaje de individuos (plantas) enfermas en ambos lotes
+es del 10% (es decir, sin diferencias entre los tratamientos).</p></li>
+<li><p>Genere una función que permita obtener una muestra aleatoria de
+los lotes y calcule el estimador de la proporción muestral para cada
+lote (<span class="math inline">\(\widehat{p_1}\)</span> y <span
+class="math inline">\(\widehat{p_2}\)</span>) para un tamaño de muestra
+dado <span class="math inline">\(n_1 = n_2\)</span>. Calcule la
+diferencia entre los estimadores <span
+class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>.</p></li>
+<li><p>Repita el escenario anterior (b) 500 veces y analice los
+resultados en cuanto al comportamiento de los <span
+class="math inline">\(500\)</span> estimadores (diferencias <span
+class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>). ¿Qué tan
+simétricos son los resultados?, ¿Son siempre cero las
+diferencias?</p></li>
+<li><p>Realice los puntos b y c para tamaños de muestra <span
+class="math inline">\(n_1 = n_2 = 5\)</span>, <span
+class="math inline">\(10\)</span>, <span
+class="math inline">\(15\)</span>, <span
+class="math inline">\(20\)</span>, <span
+class="math inline">\(30\)</span>, <span
+class="math inline">\(50\)</span>, <span
+class="math inline">\(60\)</span>, <span
+class="math inline">\(100\)</span>, <span
+class="math inline">\(200\)</span>, <span
+class="math inline">\(500\)</span>. Compare los resultados de los
+estimadores (<span
+class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>) en cuanto a
+la normalidad. También analice el comportamiento de las diferencias y
+evalúe. ¿Considera que es más probable concluir que existen diferencias
+entre los tratamientos con muestras grandes que pequeñas, es decir, cuál
+considera usted que es el efecto del tamaño de muestra en el caso de la
+comparación de proporciones?</p></li>
+<li><p>Ahora realice nuevamente los puntos a-d bajo un escenario con dos
+lotes, pero de proporciones de enfermos diferentes (<span
+class="math inline">\(p_1=0.1\)</span> y <span
+class="math inline">\(p_2=0.15\)</span>), es decir, el tratamiento del
+lote 1 si presentó un mejor desempeño reduciendo en un 5% el porcentaje
+de enfermos. Bajo este nuevo escenario compare la distribución de estas
+diferencias (<span
+class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>) con las
+observadas bajo igualdad de condiciones en los lotes. ¿Qué puede
+concluir? ¿Existen puntos en los cuales es posible que se observen
+diferencias de <span class="math inline">\(p_1- p_2\)</span> bajo ambos
+escenarios (escenario 1: sin diferencias entre <span
+class="math inline">\(p_1\)</span> y <span
+class="math inline">\(p_2\)</span>, escenario 2: diferencia de
+5%)?</p></li>
+</ol>
+<p></br></br></br></p>
+</div>
+</div>
+<div id="problema-3" class="section level1">
+<h1><span style="color:#034a94"><strong>Problema 3</strong></span></h1>
+<div id="uso-del-valor-p-como-criterio-de-decisión"
+class="section level3">
+<h3><span style="color:#FF7F00"><strong>Uso del valor-p como criterio de
+decisión</strong></span></h3>
+<p>Con base a los artículos:</p>
+<ul>
+<li><em>“Statistical Errors: P values, the gold standard of statistical
+validity, are not as reliable as many scientists assume”</em><br />
+</li>
+<li><em>“Statisticians issue warning on P values: Statement aims to halt
+missteps in the quest for certainty”</em></li>
+</ul>
+<p>Escriba un resumen (máximo 2 páginas) sobre ambos artículos e incluya
+en este sus opiniones en cuanto al uso del valor p como criterio de
+decisión en inferencia estadística.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
