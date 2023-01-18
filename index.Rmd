@@ -24,10 +24,6 @@ knitr::include_graphics("img/banner1.png")
 
 </br></br>
 
-La Actividad 2 está compuesta por tres problemas planteados, dos de ellos basados en la simulación y un tercero en lectura de dos artículos que se describen a continuación:
-
-</br></br>
-
 # <span style="color:#034a94"> **Problema 1**</span>
 
 </br>
@@ -38,7 +34,7 @@ La Actividad 2 está compuesta por tres problemas planteados, dos de ellos basad
 
 El Teorema del Límite Central es uno de los más importantes en la inferencia estadística y habla sobre la convergencia de los estimadores como la proporción muestral a la distribución normal. Algunos autores afirman que esta aproximación es bastante buena a partir del umbral $n>30$.
 
-A continuación se describen los siguientes pasos para si verificación:
+A continuación se describen los siguientes pasos para su verificación:
 
 </br>
 
@@ -46,21 +42,21 @@ a. Realice una simulación en la cual genere una población de $N=1000$ (Lote), 
 
 </br>
 
-b. Genere una función que: 
-    * Permita obtener una muestra aleatoria de la población y 
+b. Genere una función que permita: 
+    * Obtener una muestra aleatoria de la población y 
     * Calcule el estimador de la proporción muestral $\widehat{p}$ para un tamaño de muestra dado $n$. 
 
 </br>
 
-c. Repita el escenario anterior (b) $n=500$ veces y analice los resultados en cuanto al comportamiento de los $500$ resultados del estimador $\widehat{p}$. ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice un comentario sobre los resultados obtenidos.
+c. Repita el escenario anterior (b) $n=500$ veces y analice los resultados en cuanto al comportamiento de los $500$ resultados del estimador $\widehat{p}$. ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
 
 </br>
 
-d. Repita los puntos  b y c para tamaños de muestra $n=5$, $10$, $15$, $20$, $30$, $50$, $60$, $100$, $200$, $500$. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks) y métodos gráficos (grafico qqnorm de normalidad). Comente los resultados obtenidos
+d. Repita los puntos  b y c para tamaños de muestra $n=5$, $10$, $15$, $20$, $30$, $50$, $60$, $100$, $200$, $500$. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks :`shspiro.test()`) y métodos gráficos (grafico de normalidad: `qqnorm()`). Comente ensu informe los resultados obtenidos
 
 </br>
 
-e. Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobrelos resultados del ejercicio.
+e. Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobre los resultados del ejercicio.
 
 
 </br></br></br>
@@ -107,18 +103,13 @@ e. Ahora realice nuevamente los puntos a-d bajo un escenario con dos lotes, pero
 
 </br>
 
-Con base a los artículos: 
+Con base en el artículo: 
 
-
-* *“Statistical Errors: P values, the gold standard of statistical validity, are not as reliable as many scientists assume”*  
-
-</br>
-
-* *“Statisticians issue warning on P values: Statement aims to halt missteps in the quest for certainty”* 
+>[*“Statistical Errors: P values, the gold standard of statistical validity, are not as reliable as many scientists assume”*](https://folk.ntnu.no/slyderse/Nuzzo%20and%20Editorial%20-%20p-values.pdf)  
 
 </br>
 
-Escriba un resumen (máximo 2 páginas) sobre ambos artículos e incluya en este sus opiniones en cuanto al uso del valor p como criterio de decisión en inferencia estadística.
+Escriba un resumen (máximo 2 páginas) sobre el artículo e incluya en este sus opiniones en cuanto al uso del *valor p* como criterio de decisión en inferencia estadística.
 
 
 
