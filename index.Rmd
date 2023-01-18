@@ -112,6 +112,6 @@ Con base en el artículo:
 Escriba un resumen (máximo 2 páginas) sobre el artículo e incluya en este sus opiniones en cuanto al uso del *valor p* como criterio de decisión en inferencia estadística.
 
 
-
+</br>
 
 
