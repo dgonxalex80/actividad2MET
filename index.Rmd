@@ -58,10 +58,14 @@ d. Repita los puntos  b y c para tamaños de muestra $n=5$, $10$, $15$, $20$, $3
 
 e. Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobre los resultados del ejercicio.
 
+</br></br>
+
+**Entregable** : informe **actividad1.pdf**
 
 </br></br></br>
 
 # <span style="color:#034a94">**Problema 2**</span>
+
 </br>
 
 ### <span style="color:#FF7F00">**Validación de resultados**</span> 
@@ -78,7 +82,7 @@ a. Realice una simulación en la cual genere dos poblaciones de $N_1=1000$ (Lote
 
 </br>
 
-b. Genere una función que permita obtener una muestra aleatoria de los lotes y calcule el estimador de la proporción muestral para cada lote ($\widehat{p_1}$ y $\widehat{p_2}$) para un tamaño de muestra dado $n_1 = n_2$. Calcule la diferencia entre los estimadores $\widehat{p_1}-\widehat{p_2}$.
+b. Genere una función que permita obtener una muestra aleatoria de los lotes y calcule el estimador de la proporción muestral para cada lote ($\widehat{p_1}$ y $\widehat{p_2}$) para un tamaño de muestra dado $n_1 = n_2$. Calcule la diferencia entre los estimadores ($\widehat{p_1}-\widehat{p_2}$).
 
 </br>
 
@@ -92,8 +96,12 @@ d. Realice los puntos b y c para tamaños de muestra $n_1 = n_2 = 5$, $10$, $15$
 
 e. Ahora realice nuevamente los puntos a-d bajo un escenario con dos lotes, pero de proporciones de enfermos diferentes ($p_1=0.1$ y $p_2=0.15$), es decir, el tratamiento del lote 1 si presentó un mejor desempeño reduciendo en un 5% el porcentaje de enfermos. Bajo este nuevo escenario compare la distribución de estas diferencias ($\widehat{p_1}-\widehat{p_2}$) con las observadas bajo igualdad de condiciones en los lotes. ¿Qué puede concluir? ¿Existen puntos en los cuales es posible que se observen diferencias de $p_1- p_2$ bajo ambos escenarios (escenario 1: sin diferencias entre $p_1$ y $p_2$, escenario 2: diferencia de 5%)?
 
-</br></br></br>
+</br>
 
+
+**Entregable** :  informe **actividad2.pdf**
+
+</br></br></br>
 
 # <span style="color:#034a94">**Problema 3**</span>
 
@@ -112,6 +120,8 @@ Con base en el artículo:
 Escriba un resumen (máximo 2 páginas) sobre el artículo e incluya en este sus opiniones en cuanto al uso del *valor p* como criterio de decisión en inferencia estadística.
 
 
-</br>
+</br></br>
+
+**Entregable** :  resumen **actividad3.pdf**
 
 
