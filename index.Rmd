@@ -14,37 +14,132 @@ c1 ="#FF7F00"  # naranja - color primario
 c2 ="#034A94"  # azul oscuro - color secundario
 c3 ="#0EB0C6"  # azul claro - color terciario
 c4 ="#686868"  # gris - color texto
+
+# devtools::install_github("dgonxalex80/paqueteMETODOS")
+library(paqueteMETODOS)
+data(ventas)
 ```
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align = "center"}
-knitr::include_graphics("img/banner1.png")
+knitr::include_graphics("img/banner3.png")
 ```
 
+
+El proceso de simulación constituye una herramienta poderosa para la estadística que se pueden emplear para entender relaciones complejas y estimar valores difíciles de calcular directamente.  Para entenderlo utilizaremos se plantean los siguientes problemas:
 
 </br></br>
 
 # <span style="color:#034a94"> **Problema 1**</span>
 
+<br/>
+
+## <span style="color:#FF7F00">**Estimación del valor de $\pi$ **</span> 
+
+La siguiente figura sugiere como estimar el valor de $\pi$ con una simulación. En la figura, un circuito con un área igual a $\pi/4$, está inscrito en un cuadrado cuya área es igual a 1. Se elige de forma aleatoria $n$ puntos dentro del cuadrado . La probabilidad de que un punto esté dentro del círculo es igual a la fracción del área del cuadrado que abarca a este, la cual es $\pi/4$. Por tanto, se puede estimar el valor de $\pi/4$ al contar el número de puntos dentro del círculo, para obtener la estimación de $\pi/4$ . De este último resultado se encontrar una aproximación para el valor de $\pi$ . 
+
+
+```{r, echo=FALSE, out.width="60%", fig.align = "center"}
+knitr::include_graphics("img/pi.png")
+```
+
+<br/>
+
+Pasos sugeridos:
+
+a. Genere $n$ coordenadas $x$:  $X_{1}$, . . . , $X_{n}$. Utilice la distribución uniforme con valor mínimo de $0$ y valor máximo de $1$. La distribución uniforme genera variables aleatorias que tienen la misma probabilidad de venir de cualquier parte del intervalo $(0, 1)$. 
+
+b. Genere $1000$ coordenadas $y$ : $Y_{1}, . . . , Y_{n}$, utilizando nuevamente la distribución uniforme con valor mínimo de $0$ y valor máximo de $1$.
+
+c. Cada punto $(X_{i},Y_{i})$ se encuentra dentro del círculo si su distancia desde el centro $(0.5, 0.5)$ es menor a $0.5$. Para cada par $(X_{i},Y_{i})$ determine si la distancia desde el centro es menor a $0.5$. Esto último se puede realizar al calcular el valor $(X_{i}-0.5)^{2}+(Y_{i}-0.5)^{2}$, que es el cuadrado de la distancia, y al determinar si es menor que $0.25$.
+
+d. ¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su estimación de $\pi$? 
+
+<br/>
+
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span>
+
+* Con sólo 1000 puntos, es probable que la estimación presente un error de 0.05 o más. Una simulación con 10000 y 100000 puntos tiene mayores probabilidades de dar como resultado una estimación muy cercana al valor verdadero.
+
+* funciones recomendadas : `runif()`, `funtion(){}`  
+
+* **Entregable** : enlace en **RPubs** con informe 1
+
+</div>
+
+</br></br></br>
+
+# <span style="color:#034a94"> **Problema 2**</span>
+
 </br>
 
-### <span style="color:#FF7F00">**Teorema del Límite Central**</span> 
+## <span style="color:#FF7F00">**Propiedades de los estimadores**</span>
+
+La simulación ayuda a entender y validad las propiedades de los estimadores estadísticos como son. insesgadez, eficiencia y la consistencia principalmente. El siguiente problema permite evidenciar las principales características de un grupo de estimadores propuestos para la estimación de un parámetro asociado a un modelo de probabilidad.
+
+
+Sean  $X_{1}$, $X_{2}$, $X_{3}$ y $X_{4}$, una muestra aleatoria de tamaño $n = 4$ cuya población la conforma una distribución exponencial con parámetro $\theta$ desconocido. Determine las características de cada uno de los siguientes estimadores propuestos:
+
+<br/>
+
+* $\widehat{\theta_1} = \dfrac{X_{1} + X_{2}}{6} + \dfrac{X_3 + X_4}{3}$
+
+<br/>
+
+* $\widehat{\theta_2} = \dfrac{(X_1 + 2 X_2 + 3 X_3 + 4 X_4)}{5}$
+
+<br/>
+
+* $\widehat{\theta_3} = \dfrac{X_1 + X_2 + X_3 + X_4}{4}$ $
+
+<br/>
+
+* $\widehat{\theta_4} = \dfrac{\min\{X_1,X_2,X_3,X_4\} + \max\{X_1,X_2,X_3,X_4\}}{2}$
+
+
+
+<br/>
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span>
+
+* Evalue las propiedades de insesgadez, eficiencia y consistencia
+
+* Suponga un valor para el parámetro $\theta$
+
+* funciones recomendadas : `function(){}`,  `rexp()` ,  `data.frame()`,   `apply()`
+
+* **Entregable** : enlace en **RPubs** con informe 2
+
+</div>
+
+<br/>
+
+
+
+</br></br></br>
+
+# <span style="color:#034a94"> **Problema 3**</span>
+
+<br/>
+
+## <span style="color:#FF7F00">**Teorema del Límite Central**</span> 
 
 </br>
 
-El Teorema del Límite Central es uno de los más importantes en la inferencia estadística y habla sobre la convergencia de los estimadores como la proporción muestral a la distribución normal. Algunos autores afirman que esta aproximación es bastante buena a partir del umbral $n>30$.
+El Teorema del Límite Central es uno de los más importantes en la inferencia estadística y habla sobre la convergencia de los estimadores como la proporción muestral a la distribución normal. Algunos autores afirman que esta aproximación es bastante buena a partir del umbral $n > 30$.
 
 A continuación se describen los siguientes pasos para su verificación:
 
 </br>
 
-a. Realice una simulación en la cual genere una población de $N=1000$ (Lote), donde el porcentaje de individuos (supongamos plantas) enfermas sea del 50%.
+a. Realice una simulación en la cual genere una población de $n=1000$ (Lote), donde el porcentaje de individuos (supongamos plantas) enfermas sea del 50%.
 
 </br>
 
 b. Genere una función que permita: 
-    * Obtener una muestra aleatoria de la población y 
-    * Calcule el estimador de la proporción muestral $\widehat{p}$ para un tamaño de muestra dado $n$. 
+* Obtener una muestra aleatoria de la población y 
+* Calcule el estimador de la proporción muestral $\widehat{p}$ para un tamaño de muestra dado $n$. 
 
 </br>
 
@@ -52,76 +147,65 @@ c. Repita el escenario anterior (b) $n=500$ veces y analice los resultados en cu
 
 </br>
 
-d. Repita los puntos  b y c para tamaños de muestra $n=5$, $10$, $15$, $20$, $30$, $50$, $60$, $100$, $200$, $500$. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks :`shspiro.test()`) y métodos gráficos (grafico de normalidad: `qqnorm()`). Comente ensu informe los resultados obtenidos
+d. Repita los puntos  b y c para tamaños de muestra $n=5$, $10$, $15$, $20$, $30$, $50$, $60$, $100$, $200$, $500$. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks :`shspiro.test()`) y métodos gráficos (gráfico de normalidad: `qqnorm()`). Comente en su informe los resultados obtenidos
 
 </br>
 
 e. Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobre los resultados del ejercicio.
 
-</br></br>
+</br>
 
-**Entregable** : informe **actividad1.pdf**
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span>
+
+* funciones recomendadas : `rbinom()` , `data.frame()`,   `apply()`
+
+**Entregable** : enlace en **RPubs** con informe 3
+</div>
 
 </br></br></br>
 
-# <span style="color:#034a94">**Problema 2**</span>
+# <span style="color:#034a94">**Problema 4**</span>
 
-</br>
 
-### <span style="color:#FF7F00">**Validación de resultados**</span> 
+<br/>
 
-</br>
-
-La comparación de tratamientos es una práctica fundamental en las ciencias agropecuarias y para ello a nivel estadístico se cuenta con herramientas para apoyar el proceso de toma de decisiones y así poder lograr concluir con un alto grado de confianza sobre los resultados observados en una muestra. A través de la simulación es posible evaluar estimadores y sus propiedades,  que nos permitan usarlos con toda tranquilidad.   
-
-Suponga un escenario en el cual se aplicó tratamientos diferentes a dos lotes de una misma plantas y se desea analizar si alguno de los dos tratamientos presenta un mejor desempeño en el control de una plaga presente en ambos al momento inicial. Para ello utilizará como criterio de desempeño el tratamiento, el *menor porcentaje de plantas enfermas* presente después de un tiempo de aplicación (es decir, si se presentan o no diferencias en las proporciones de enfermos $p_1$ y $p_2$ - proporciones poblacionales-). 
-
-</br>
-
-a. Realice una simulación en la cual genere dos poblaciones de $N_1=1000$ (Lote 1) y $N_2=1500$ (Lote 2), para los cuales se asume que el porcentaje de individuos (plantas) enfermas en ambos lotes es del 10% (es decir, sin diferencias entre los tratamientos).
-
-</br>
-
-b. Genere una función que permita obtener una muestra aleatoria de los lotes y calcule el estimador de la proporción muestral para cada lote ($\widehat{p_1}$ y $\widehat{p_2}$) para un tamaño de muestra dado $n_1 = n_2$. Calcule la diferencia entre los estimadores ($\widehat{p_1}-\widehat{p_2}$).
-
-</br>
-
-c. Repita el escenario anterior (b) 500 veces y analice los resultados en cuanto al comportamiento de los $500$ estimadores (diferencias $\widehat{p_1}-\widehat{p_2}$). ¿Qué tan simétricos son los resultados?, ¿Son siempre cero las diferencias?
-
-</br>
-
-d. Realice los puntos b y c para tamaños de muestra $n_1 = n_2 = 5$, $10$, $15$, $20$, $30$, $50$, $60$, $100$, $200$, $500$. Compare los resultados de los estimadores ($\widehat{p_1}-\widehat{p_2}$) en cuanto a la normalidad. También analice el comportamiento de las diferencias y evalúe. ¿Considera que es más probable concluir que existen diferencias entre los tratamientos con muestras grandes que pequeñas, es decir, cuál considera usted que es el efecto del tamaño de muestra en el caso de la comparación de proporciones? 
-
-</br>
-
-e. Ahora realice nuevamente los puntos a-d bajo un escenario con dos lotes, pero de proporciones de enfermos diferentes ($p_1=0.1$ y $p_2=0.15$), es decir, el tratamiento del lote 1 si presentó un mejor desempeño reduciendo en un 5% el porcentaje de enfermos. Bajo este nuevo escenario compare la distribución de estas diferencias ($\widehat{p_1}-\widehat{p_2}$) con las observadas bajo igualdad de condiciones en los lotes. ¿Qué puede concluir? ¿Existen puntos en los cuales es posible que se observen diferencias de $p_1- p_2$ bajo ambos escenarios (escenario 1: sin diferencias entre $p_1$ y $p_2$, escenario 2: diferencia de 5%)?
+## <span style="color:#FF7F00">**Estimacción boostrap**</span> 
 
 </br>
 
 
-**Entregable** :  informe **actividad2.pdf**
+Cuando se extrae una muestra de una población que no es normal y se requiere estimar un intervalo de confianza se pueden utilizar los métodos de estimación **bootstrap**. Esta metodología supone que se puede reconstruir la población objeto de estudio mediante un muestreo con reemplazo de la muestra que se tiene.  Existen varias versiones del método. Una presentación básica del método se describe a continuación:
+
+<br/>
+
+El artículo de In-use Emissions from Heavy Duty Dissel Vehicles (J.Yanowitz, 2001) presenta las mediciones de eficiencia de combustible en millas/galón de una muestra de siete camiones. Los datos obtenidos son los siguientes: 7.69, 4.97, 4.56, 6.49, 4.34, 6.24 y 4.45. Se supone que es una muestra aleatoria de camiones y que se desea construir un intervalo de confianza del 95 % para la media  de la eficiencia de combustible de esta población. No se tiene información de la distribución de los datos. El método bootstrap permite construir intervalos de confianza del 95 % - Para ilustrar el método suponga que coloca los valores de la muestra en una caja y extrae uno al azar. Este correspondería al primer valor de la muestra bootstrap $X^{∗}_{1}$. Después de anotado el valor se regresa $X^{∗}_{1}$  a la caja y se extrae el valor $X^{∗}_{2}$ , regresandolo nuevamente. Este procedimiento se repite hasta completar una muestra de tamaño $n$, $X^{∗}_{1}$,$X^{∗}_{2}$,$X^{∗}_{2}$,\cdot $X^{∗}_{n}$, conformando la muestra bootstrap.
+
+Es necesario extraer un gran número de muestras (suponga k = 1000). Para cada una de las muestra bootstrap obtenidas se calcula la media $\bar{X^{∗}_{i}}$, obteniéndose un valor para cada muestra. El intervalo de confianza queda conformado por los percentiles $P_{2.5}$ y $P_{97.5}$. Existen dos métodos para estimarlo:
+
+<br/><br/>
+
+|        |                                              |
+|:-------|:--------------------------------------------:|
+|Método 1| $(P_{2.5}; P_{97.5})$                        |
+|Método 2| $(2\bar{X} − P_{97.5}; 2\bar{X} − P_{2.5})$  |
+|        |                                              |
+
+<br/>
+
+Construya el intervalo de confianza por los dos métodos y compare los resultados obtenidos. Comente los resultados. Confiaría en estas estimaciones?
+
+<br/>
+<br/>
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span>
+
+* Problema tomado de Navidi(2006) 
+
+* **Entregable** : enlace en **RPubs** con informe 4
+
+* funciones recomendadas : `sample()` , `apply()`, `quantile()`
+</div>
 
 </br></br></br>
-
-# <span style="color:#034a94">**Problema 3**</span>
-
-</br>
-
-### <span style="color:#FF7F00">**Uso del valor-p como criterio de decisión**</span> 
-
-</br>
-
-Con base en el artículo: 
-
->[*“Statistical Errors: P values, the gold standard of statistical validity, are not as reliable as many scientists assume”*](https://folk.ntnu.no/slyderse/Nuzzo%20and%20Editorial%20-%20p-values.pdf)  
-
-</br>
-
-Escriba un resumen (máximo 2 páginas) sobre el artículo e incluya en este sus opiniones en cuanto al uso del *valor p* como criterio de decisión en inferencia estadística.
-
-
-</br></br>
-
-**Entregable** :  resumen **actividad3.pdf**
-
 

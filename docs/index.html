@@ -13,7 +13,7 @@
 
 <title> Actividad 2</title>
 
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -262,38 +262,171 @@ $(document).ready(function () {
 </div>
 
 
-<p><img src="img/banner1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="img/banner3.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>El proceso de simulación constituye una herramienta poderosa para la
+estadística que se pueden emplear para entender relaciones complejas y
+estimar valores difíciles de calcular directamente. Para entenderlo
+utilizaremos se plantean los siguientes problemas:</p>
 <p></br></br></p>
 <div id="problema-1" class="section level1">
 <h1><span style="color:#034a94"> <strong>Problema 1</strong></span></h1>
+<p><br/></p>
+<div id="estimación-del-valor-de-pi" class="section level2">
+<h2><span style="color:#FF7F00"><strong>Estimación del valor de <span
+class="math inline">\(\pi\)</span> </strong></span></h2>
+<p>La siguiente figura sugiere como estimar el valor de <span
+class="math inline">\(\pi\)</span> con una simulación. En la figura, un
+circuito con un área igual a <span class="math inline">\(\pi/4\)</span>,
+está inscrito en un cuadrado cuya área es igual a 1. Se elige de forma
+aleatoria <span class="math inline">\(n\)</span> puntos dentro del
+cuadrado . La probabilidad de que un punto esté dentro del círculo es
+igual a la fracción del área del cuadrado que abarca a este, la cual es
+<span class="math inline">\(\pi/4\)</span>. Por tanto, se puede estimar
+el valor de <span class="math inline">\(\pi/4\)</span> al contar el
+número de puntos dentro del círculo, para obtener la estimación de <span
+class="math inline">\(\pi/4\)</span> . De este último resultado se
+encontrar una aproximación para el valor de <span
+class="math inline">\(\pi\)</span> .</p>
+<p><img src="img/pi.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><br/></p>
+<p>Pasos sugeridos:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Genere <span class="math inline">\(n\)</span> coordenadas <span
+class="math inline">\(x\)</span>: <span
+class="math inline">\(X_{1}\)</span>, . . . , <span
+class="math inline">\(X_{n}\)</span>. Utilice la distribución uniforme
+con valor mínimo de <span class="math inline">\(0\)</span> y valor
+máximo de <span class="math inline">\(1\)</span>. La distribución
+uniforme genera variables aleatorias que tienen la misma probabilidad de
+venir de cualquier parte del intervalo <span class="math inline">\((0,
+1)\)</span>.</p></li>
+<li><p>Genere <span class="math inline">\(1000\)</span> coordenadas
+<span class="math inline">\(y\)</span> : <span
+class="math inline">\(Y_{1}, . . . , Y_{n}\)</span>, utilizando
+nuevamente la distribución uniforme con valor mínimo de <span
+class="math inline">\(0\)</span> y valor máximo de <span
+class="math inline">\(1\)</span>.</p></li>
+<li><p>Cada punto <span class="math inline">\((X_{i},Y_{i})\)</span> se
+encuentra dentro del círculo si su distancia desde el centro <span
+class="math inline">\((0.5, 0.5)\)</span> es menor a <span
+class="math inline">\(0.5\)</span>. Para cada par <span
+class="math inline">\((X_{i},Y_{i})\)</span> determine si la distancia
+desde el centro es menor a <span class="math inline">\(0.5\)</span>.
+Esto último se puede realizar al calcular el valor <span
+class="math inline">\((X_{i}-0.5)^{2}+(Y_{i}-0.5)^{2}\)</span>, que es
+el cuadrado de la distancia, y al determinar si es menor que <span
+class="math inline">\(0.25\)</span>.</p></li>
+<li><p>¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su
+estimación de <span class="math inline">\(\pi\)</span>?</p></li>
+</ol>
+<p><br/></p>
+<div id="nota" class="section level3 content-box-gray">
+<h3><span style="color:#686868"><strong>Nota</strong></span></h3>
+<ul>
+<li><p>Con sólo 1000 puntos, es probable que la estimación presente un
+error de 0.05 o más. Una simulación con 10000 y 100000 puntos tiene
+mayores probabilidades de dar como resultado una estimación muy cercana
+al valor verdadero.</p></li>
+<li><p>funciones recomendadas : <code>runif()</code>,
+<code>funtion(){}</code></p></li>
+<li><p><strong>Entregable</strong> : enlace en <strong>RPubs</strong>
+con informe 1</p></li>
+</ul>
+</div>
+<p></br></br></br></p>
+</div>
+</div>
+<div id="problema-2" class="section level1">
+<h1><span style="color:#034a94"> <strong>Problema 2</strong></span></h1>
 <p></br></p>
-<div id="teorema-del-límite-central" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Teorema del Límite
-Central</strong></span></h3>
+<div id="propiedades-de-los-estimadores" class="section level2">
+<h2><span style="color:#FF7F00"><strong>Propiedades de los
+estimadores</strong></span></h2>
+<p>La simulación ayuda a entender y validad las propiedades de los
+estimadores estadísticos como son. insesgadez, eficiencia y la
+consistencia principalmente. El siguiente problema permite evidenciar
+las principales características de un grupo de estimadores propuestos
+para la estimación de un parámetro asociado a un modelo de
+probabilidad.</p>
+<p>Sean <span class="math inline">\(X_{1}\)</span>, <span
+class="math inline">\(X_{2}\)</span>, <span
+class="math inline">\(X_{3}\)</span> y <span
+class="math inline">\(X_{4}\)</span>, una muestra aleatoria de tamaño
+<span class="math inline">\(n = 4\)</span> cuya población la conforma
+una distribución exponencial con parámetro <span
+class="math inline">\(\theta\)</span> desconocido. Determine las
+características de cada uno de los siguientes estimadores
+propuestos:</p>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(\widehat{\theta_1} = \dfrac{X_{1} +
+X_{2}}{6} + \dfrac{X_3 + X_4}{3}\)</span></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(\widehat{\theta_2} = \dfrac{(X_1 + 2 X_2
++ 3 X_3 + 4 X_4)}{5}\)</span></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(\widehat{\theta_3} = \dfrac{X_1 + X_2 +
+X_3 + X_4}{4}\)</span> $</li>
+</ul>
+<p><br/></p>
+<ul>
+<li><span class="math inline">\(\widehat{\theta_4} =
+\dfrac{\min\{X_1,X_2,X_3,X_4\} +
+\max\{X_1,X_2,X_3,X_4\}}{2}\)</span></li>
+</ul>
+<br/>
+<div id="nota-1" class="section level3 content-box-gray">
+<h3><span style="color:#686868"><strong>Nota</strong></span></h3>
+<ul>
+<li><p>Evalue las propiedades de insesgadez, eficiencia y
+consistencia</p></li>
+<li><p>Suponga un valor para el parámetro <span
+class="math inline">\(\theta\)</span></p></li>
+<li><p>funciones recomendadas : <code>function(){}</code>,
+<code>rexp()</code> , <code>data.frame()</code>,
+<code>apply()</code></p></li>
+<li><p><strong>Entregable</strong> : enlace en <strong>RPubs</strong>
+con informe 2</p></li>
+</ul>
+</div>
+<p><br/></p>
+<p></br></br></br></p>
+</div>
+</div>
+<div id="problema-3" class="section level1">
+<h1><span style="color:#034a94"> <strong>Problema 3</strong></span></h1>
+<p><br/></p>
+<div id="teorema-del-límite-central" class="section level2">
+<h2><span style="color:#FF7F00"><strong>Teorema del Límite
+Central</strong></span></h2>
 <p></br></p>
 <p>El Teorema del Límite Central es uno de los más importantes en la
 inferencia estadística y habla sobre la convergencia de los estimadores
 como la proporción muestral a la distribución normal. Algunos autores
 afirman que esta aproximación es bastante buena a partir del umbral
-<span class="math inline">\(n&gt;30\)</span>.</p>
+<span class="math inline">\(n &gt; 30\)</span>.</p>
 <p>A continuación se describen los siguientes pasos para su
 verificación:</p>
 <p></br></p>
 <ol style="list-style-type: lower-alpha">
 <li>Realice una simulación en la cual genere una población de <span
-class="math inline">\(N=1000\)</span> (Lote), donde el porcentaje de
+class="math inline">\(n=1000\)</span> (Lote), donde el porcentaje de
 individuos (supongamos plantas) enfermas sea del 50%.</li>
 </ol>
 <p></br></p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Genere una función que permita:
+<li>Genere una función que permita:</li>
+</ol>
 <ul>
 <li>Obtener una muestra aleatoria de la población y</li>
 <li>Calcule el estimador de la proporción muestral <span
 class="math inline">\(\widehat{p}\)</span> para un tamaño de muestra
 dado <span class="math inline">\(n\)</span>.</li>
-</ul></li>
-</ol>
+</ul>
 <p></br></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Repita el escenario anterior (b) <span
@@ -320,8 +453,8 @@ class="math inline">\(200\)</span>, <span
 class="math inline">\(500\)</span>. Compare los resultados obtenidos
 para los diferentes tamaños de muestra en cuanto a la normalidad.
 Utilice pruebas de bondad y ajuste (shapiro wilks
-:<code>shspiro.test()</code>) y métodos gráficos (grafico de normalidad:
-<code>qqnorm()</code>). Comente ensu informe los resultados
+:<code>shspiro.test()</code>) y métodos gráficos (gráfico de normalidad:
+<code>qqnorm()</code>). Comente en su informe los resultados
 obtenidos</li>
 </ol>
 <p></br></p>
@@ -330,127 +463,97 @@ obtenidos</li>
 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas
 enfermas. Concluya sobre los resultados del ejercicio.</li>
 </ol>
-<p></br></br></p>
-<p><strong>Entregable</strong> : informe
-<strong>actividad1.pdf</strong></p>
+<p></br></p>
+<div id="nota-2" class="section level3 content-box-gray">
+<h3><span style="color:#686868"><strong>Nota</strong></span></h3>
+<ul>
+<li>funciones recomendadas : <code>rbinom()</code> ,
+<code>data.frame()</code>, <code>apply()</code></li>
+</ul>
+<p><strong>Entregable</strong> : enlace en <strong>RPubs</strong> con
+informe 3</p>
+</div>
 <p></br></br></br></p>
 </div>
 </div>
-<div id="problema-2" class="section level1">
-<h1><span style="color:#034a94"><strong>Problema 2</strong></span></h1>
+<div id="problema-4" class="section level1">
+<h1><span style="color:#034a94"><strong>Problema 4</strong></span></h1>
+<p><br/></p>
+<div id="estimacción-boostrap" class="section level2">
+<h2><span style="color:#FF7F00"><strong>Estimacción
+boostrap</strong></span></h2>
 <p></br></p>
-<div id="validación-de-resultados" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Validación de
-resultados</strong></span></h3>
-<p></br></p>
-<p>La comparación de tratamientos es una práctica fundamental en las
-ciencias agropecuarias y para ello a nivel estadístico se cuenta con
-herramientas para apoyar el proceso de toma de decisiones y así poder
-lograr concluir con un alto grado de confianza sobre los resultados
-observados en una muestra. A través de la simulación es posible evaluar
-estimadores y sus propiedades, que nos permitan usarlos con toda
-tranquilidad.</p>
-<p>Suponga un escenario en el cual se aplicó tratamientos diferentes a
-dos lotes de una misma plantas y se desea analizar si alguno de los dos
-tratamientos presenta un mejor desempeño en el control de una plaga
-presente en ambos al momento inicial. Para ello utilizará como criterio
-de desempeño el tratamiento, el <em>menor porcentaje de plantas
-enfermas</em> presente después de un tiempo de aplicación (es decir, si
-se presentan o no diferencias en las proporciones de enfermos <span
-class="math inline">\(p_1\)</span> y <span
-class="math inline">\(p_2\)</span> - proporciones poblacionales-).</p>
-<p></br></p>
-<ol style="list-style-type: lower-alpha">
-<li>Realice una simulación en la cual genere dos poblaciones de <span
-class="math inline">\(N_1=1000\)</span> (Lote 1) y <span
-class="math inline">\(N_2=1500\)</span> (Lote 2), para los cuales se
-asume que el porcentaje de individuos (plantas) enfermas en ambos lotes
-es del 10% (es decir, sin diferencias entre los tratamientos).</li>
-</ol>
-<p></br></p>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Genere una función que permita obtener una muestra aleatoria de los
-lotes y calcule el estimador de la proporción muestral para cada lote
-(<span class="math inline">\(\widehat{p_1}\)</span> y <span
-class="math inline">\(\widehat{p_2}\)</span>) para un tamaño de muestra
-dado <span class="math inline">\(n_1 = n_2\)</span>. Calcule la
-diferencia entre los estimadores (<span
-class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>).</li>
-</ol>
-<p></br></p>
-<ol start="3" style="list-style-type: lower-alpha">
-<li>Repita el escenario anterior (b) 500 veces y analice los resultados
-en cuanto al comportamiento de los <span
-class="math inline">\(500\)</span> estimadores (diferencias <span
-class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>). ¿Qué tan
-simétricos son los resultados?, ¿Son siempre cero las diferencias?</li>
-</ol>
-<p></br></p>
-<ol start="4" style="list-style-type: lower-alpha">
-<li>Realice los puntos b y c para tamaños de muestra <span
-class="math inline">\(n_1 = n_2 = 5\)</span>, <span
-class="math inline">\(10\)</span>, <span
-class="math inline">\(15\)</span>, <span
-class="math inline">\(20\)</span>, <span
-class="math inline">\(30\)</span>, <span
-class="math inline">\(50\)</span>, <span
-class="math inline">\(60\)</span>, <span
-class="math inline">\(100\)</span>, <span
-class="math inline">\(200\)</span>, <span
-class="math inline">\(500\)</span>. Compare los resultados de los
-estimadores (<span
-class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>) en cuanto a
-la normalidad. También analice el comportamiento de las diferencias y
-evalúe. ¿Considera que es más probable concluir que existen diferencias
-entre los tratamientos con muestras grandes que pequeñas, es decir, cuál
-considera usted que es el efecto del tamaño de muestra en el caso de la
-comparación de proporciones?</li>
-</ol>
-<p></br></p>
-<ol start="5" style="list-style-type: lower-alpha">
-<li>Ahora realice nuevamente los puntos a-d bajo un escenario con dos
-lotes, pero de proporciones de enfermos diferentes (<span
-class="math inline">\(p_1=0.1\)</span> y <span
-class="math inline">\(p_2=0.15\)</span>), es decir, el tratamiento del
-lote 1 si presentó un mejor desempeño reduciendo en un 5% el porcentaje
-de enfermos. Bajo este nuevo escenario compare la distribución de estas
-diferencias (<span
-class="math inline">\(\widehat{p_1}-\widehat{p_2}\)</span>) con las
-observadas bajo igualdad de condiciones en los lotes. ¿Qué puede
-concluir? ¿Existen puntos en los cuales es posible que se observen
-diferencias de <span class="math inline">\(p_1- p_2\)</span> bajo ambos
-escenarios (escenario 1: sin diferencias entre <span
-class="math inline">\(p_1\)</span> y <span
-class="math inline">\(p_2\)</span>, escenario 2: diferencia de 5%)?</li>
-</ol>
-<p></br></p>
-<p><strong>Entregable</strong> : informe
-<strong>actividad2.pdf</strong></p>
+<p>Cuando se extrae una muestra de una población que no es normal y se
+requiere estimar un intervalo de confianza se pueden utilizar los
+métodos de estimación <strong>bootstrap</strong>. Esta metodología
+supone que se puede reconstruir la población objeto de estudio mediante
+un muestreo con reemplazo de la muestra que se tiene. Existen varias
+versiones del método. Una presentación básica del método se describe a
+continuación:</p>
+<p><br/></p>
+<p>El artículo de In-use Emissions from Heavy Duty Dissel Vehicles
+(J.Yanowitz, 2001) presenta las mediciones de eficiencia de combustible
+en millas/galón de una muestra de siete camiones. Los datos obtenidos
+son los siguientes: 7.69, 4.97, 4.56, 6.49, 4.34, 6.24 y 4.45. Se supone
+que es una muestra aleatoria de camiones y que se desea construir un
+intervalo de confianza del 95 % para la media de la eficiencia de
+combustible de esta población. No se tiene información de la
+distribución de los datos. El método bootstrap permite construir
+intervalos de confianza del 95 % - Para ilustrar el método suponga que
+coloca los valores de la muestra en una caja y extrae uno al azar. Este
+correspondería al primer valor de la muestra bootstrap <span
+class="math inline">\(X^{∗}_{1}\)</span>. Después de anotado el valor se
+regresa <span class="math inline">\(X^{∗}_{1}\)</span> a la caja y se
+extrae el valor <span class="math inline">\(X^{∗}_{2}\)</span> ,
+regresandolo nuevamente. Este procedimiento se repite hasta completar
+una muestra de tamaño <span class="math inline">\(n\)</span>, <span
+class="math inline">\(X^{∗}_{1}\)</span>,<span
+class="math inline">\(X^{∗}_{2}\)</span>,<span
+class="math inline">\(X^{∗}_{2}\)</span>,<span
+class="math inline">\(X^{∗}_{n}\)</span>, conformando la muestra
+bootstrap.</p>
+<p>Es necesario extraer un gran número de muestras (suponga k = 1000).
+Para cada una de las muestra bootstrap obtenidas se calcula la media
+<span class="math inline">\(\bar{X^{∗}_{i}}\)</span>, obteniéndose un
+valor para cada muestra. El intervalo de confianza queda conformado por
+los percentiles <span class="math inline">\(P_{2.5}\)</span> y <span
+class="math inline">\(P_{97.5}\)</span>. Existen dos métodos para
+estimarlo:</p>
+<p><br/><br/></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">Método 1</td>
+<td align="center"><span class="math inline">\((P_{2.5};
+P_{97.5})\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Método 2</td>
+<td align="center"><span class="math inline">\((2\bar{X} − P_{97.5};
+2\bar{X} − P_{2.5})\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p>Construya el intervalo de confianza por los dos métodos y compare los
+resultados obtenidos. Comente los resultados. Confiaría en estas
+estimaciones?</p>
+<br/> <br/>
+<div id="nota-3" class="section level3 content-box-gray">
+<h3><span style="color:#686868"><strong>Nota</strong></span></h3>
+<ul>
+<li><p>Problema tomado de Navidi(2006)</p></li>
+<li><p><strong>Entregable</strong> : enlace en <strong>RPubs</strong>
+con informe 4</p></li>
+<li><p>funciones recomendadas : <code>sample()</code> ,
+<code>apply()</code>, <code>quantile()</code></p></li>
+</ul>
+</div>
 <p></br></br></br></p>
-</div>
-</div>
-<div id="problema-3" class="section level1">
-<h1><span style="color:#034a94"><strong>Problema 3</strong></span></h1>
-<p></br></p>
-<div id="uso-del-valor-p-como-criterio-de-decisión"
-class="section level3">
-<h3><span style="color:#FF7F00"><strong>Uso del valor-p como criterio de
-decisión</strong></span></h3>
-<p></br></p>
-<p>Con base en el artículo:</p>
-<blockquote>
-<p><a
-href="https://folk.ntnu.no/slyderse/Nuzzo%20and%20Editorial%20-%20p-values.pdf"><em>“Statistical
-Errors: P values, the gold standard of statistical validity, are not as
-reliable as many scientists assume”</em></a></p>
-</blockquote>
-<p></br></p>
-<p>Escriba un resumen (máximo 2 páginas) sobre el artículo e incluya en
-este sus opiniones en cuanto al uso del <em>valor p</em> como criterio
-de decisión en inferencia estadística.</p>
-<p></br></br></p>
-<p><strong>Entregable</strong> : resumen
-<strong>actividad3.pdf</strong></p>
 </div>
 </div>
 
