@@ -66,6 +66,8 @@ d. ¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su estimació
 
 * **Entregable** : enlace en **RPubs** con informe 1
 
+* Problema tomado de Navidi(2006) 
+
 </div>
 
 </br></br></br>
@@ -103,11 +105,13 @@ Sean  $X_{1}$, $X_{2}$, $X_{3}$ y $X_{4}$, una muestra aleatoria de tamaño $n =
 <div class="content-box-gray">
 ### <span style="color:#686868">**Nota**</span>
 
-* Evalue las propiedades de insesgadez, eficiencia y consistencia
+* Genere una muestras de n=20, 50, 100 y 1000  para cada uno de los estimadores planteados.
+
+* En cada caso evalue las propiedades de insesgadez, eficiencia y consistencia 
 
 * Suponga un valor para el parámetro $\theta$
 
-* funciones recomendadas : `function(){}`,  `rexp()` ,  `data.frame()`,   `apply()`
+* funciones recomendadas : `function(){}`,  `rexp()` ,  `data.frame()`,   `apply()`, `boxplot()`
 
 * **Entregable** : enlace en **RPubs** con informe 2
 
@@ -200,12 +204,15 @@ Construya el intervalo de confianza por los dos métodos y compare los resultado
 <div class="content-box-gray">
 ### <span style="color:#686868">**Nota**</span>
 
-* Problema tomado de Navidi(2006) 
+* las muestras bootstrap se pueden obtener a partir de muestreo aleatorio con repetición (o tambien llamado con sustitución)
 
 * **Entregable** : enlace en **RPubs** con informe 4
 
 * funciones recomendadas : `sample()` , `apply()`, `quantile()`
+
+* Problema tomado de Navidi(2006) 
 </div>
+
 
 </br></br></br>
 
