@@ -39,7 +39,7 @@ El proceso de simulación constituye una herramienta poderosa para la estadísti
 La siguiente figura sugiere como estimar el valor de $\pi$ con una simulación. En la figura, un circuito con un área igual a $\pi/4$, está inscrito en un cuadrado cuya área es igual a 1. Se elige de forma aleatoria $n$ puntos dentro del cuadrado . La probabilidad de que un punto esté dentro del círculo es igual a la fracción del área del cuadrado que abarca a este, la cual es $\pi/4$. Por tanto, se puede estimar el valor de $\pi/4$ al contar el número de puntos dentro del círculo, para obtener la estimación de $\pi/4$ . De este último resultado se encontrar una aproximación para el valor de $\pi$ . 
 
 
-```{r, echo=FALSE, out.width="60%", fig.align = "center"}
+```{r, echo=FALSE, out.width="50%", fig.align = "center"}
 knitr::include_graphics("img/pi.png")
 ```
 
