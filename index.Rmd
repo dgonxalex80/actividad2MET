@@ -66,7 +66,7 @@ d. ¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su estimació
 
 * **Entregable** : enlace en **RPubs** con informe 1
 
-* Problema tomado de Navidi(2006) 
+Problema tomado de Navidi(2006) 
 
 </div>
 
@@ -93,7 +93,7 @@ Sean  $X_{1}$, $X_{2}$, $X_{3}$ y $X_{4}$, una muestra aleatoria de tamaño $n =
 
 <br/>
 
-* $\widehat{\theta_3} = \dfrac{X_1 + X_2 + X_3 + X_4}{4}$ $
+* $\widehat{\theta_3} = \dfrac{X_1 + X_2 + X_3 + X_4}{4}$
 
 <br/>
 
@@ -210,7 +210,7 @@ Construya el intervalo de confianza por los dos métodos y compare los resultado
 
 * funciones recomendadas : `sample()` , `apply()`, `quantile()`
 
-* Problema tomado de Navidi(2006) 
+Problema tomado de Navidi(2006) 
 </div>
 
 
