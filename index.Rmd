@@ -162,7 +162,7 @@ e. Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de
 <div class="content-box-gray">
 ### <span style="color:#686868">**Nota**</span>
 
-* funciones recomendadas : `rbinom()` , `data.frame()`,   `apply()`
+* funciones recomendadas : `rbinom()` , `data.frame()`,   `sapply()`
 
 **Entregable** : enlace en **RPubs** con informe 3
 </div>
